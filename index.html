@@ -52,23 +52,22 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Spatio-Temporal LLM: Reasoning about Environments and Actions</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Haozhen Zheng</a><sup>*</sup>,</span>
+                <a target="_blank">Haozhen Zheng</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Beitong Tian</a>,</span>
+                  <a href="https://www.beitongtian.com/" target="_blank">Beitong Tian</a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Mingyuan Wu</a>,</span>
+                    <a href="https://scholar.google.com/citations?user=kp3PK7IAAAAJ&hl=en" target="_blank">Mingyuan Wu</a>,</span>
                     <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhenggang Tang</a>,</span> 
-                    <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Klara Nahrstedt</a>,</span> 
-                    <span class="author-block">
-                      <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Alex Schwing</a>,</span> 
-                    </span>
-                  </span>
+                      <a href="https://recordmp3.github.io/" target="_blank">Zhenggang Tang</a>,</span> 
+                      <span class="author-block">
+                        <a href="https://siebelschool.illinois.edu/about/people/faculty/klara" target="_blank">Klara Nahrstedt</a>,</span> 
+                        <span class="author-block">
+                          <a href="https://alexander-schwing.de/" target="_blank">Alex Schwing</a></span> 
+                    
                   </div>
 
                   <div class="is-size-5 publication-authors">
@@ -88,20 +87,20 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
+                    <!-- Data link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://drive.google.com/drive/folders/1qX9Pn50NFR_dNuz6eH3TnQPZDtwQu0W8?usp=sharing" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <i class="fas fa-database"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Data</span>
                     </a>
                   </span>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/zoezheng126/Spatio-Temporal-LLM" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -133,7 +132,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/pdfs/teasor-crop.pdf" alt="Banner Image" style="width: 100%; height: auto; max-height: 500px;">
+      <img src="static/images/teaser-crop.jpg" alt="Banner Image" id="tree" style="width: 100%; height: auto;">
       <h2 class="subtitle has-text-centered">
         Both spatial and temporal understanding is required to correctly answer questions in our "Reasoning about Environments and Actions" (REA) data.
       </h2>
@@ -165,116 +164,162 @@ a "spatio-temporal LLM" (ST-LLM), a model equipped with projectors to improve bo
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title is-3 has-text-centered">Dataset</h2>
+      <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto 2em auto;">
+        <p>
+          The Reasoning about Environments and Actions (REA) dataset is designed to benchmark the spatio-temporal reasoning capabilities of multimodal large language models (MLLMs). It contains question-answer (QA) pairs organized into five distinct tasks, each targeting a different aspect of spatial and temporal understanding.
+          Answering these questions requires models to reason about both the global 3D scene context (e.g., room layout, object positions) and localized temporal cues from egocentric video (e.g., human-object interactions, motion sequences). Together, these tasks offer a comprehensive challenge for developing MLLMs capable of real-world reasoning.
+          The dataset includes 24,445 training samples and 1,780 validation samples, providing a solid foundation for both supervised learning and performance evaluation.
+          Below, we showcase qualitative examples from each of the five REA tasks.
+        </p>
+      </div>
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/relative_direction.jpg" alt="Relative direction example" style="display: block; margin: 0 auto; width: 100%; height: auto; max-height: 400px; object-fit: contain;"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>Relative Direction:</strong> <br>
+            <strong>Q:</strong> Is the microwave to the left of the person when the person is performing `put down knives' and also to the left of the person when performing `pick up plate'? <br>
+            <strong>A:</strong> The microwave remains to the left of the person during both `put down knives' and `pick up plate'.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/relative_distance.jpg" alt="Relative distance example" style="display: block; margin: 0 auto; width: 100%; height: auto; max-height: 400px; object-fit: contain;"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>Relative Distance:</strong> <br>
+            <strong>Q:</strong> Does the person move closer to the hob between `turn off rice cooker' and `serve curry'? <br>
+            <strong>A:</strong> The person remains at about the same distance from the hob when performing both `turn off rice cooker' and `serve curry'.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/find_my_item.jpg" alt="Find my item example" style="display: block; margin: 0 auto; width: 100%; height: auto; max-height: 400px; object-fit: contain;"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>Find My Item:</strong> <br>
+            <strong>Q:</strong> Where is the tarragon, and how can the person get to it? <br>
+            <strong>A:</strong> The tarragon is located on the countertop to the right of the person. The person can reach it by turning to their right and walking towards the countertop.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/furniture_affordance.jpg" alt="Furniture affordance example" style="display: block; margin: 0 auto; width: 100%; height: auto; max-height: 400px; object-fit: contain;"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>Furniture Affordance:</strong> <br>
+            <strong>Q:</strong> Which of the following objects does the person interact with next, given their previous actions and current motion? A. hob, B. oven, C. fridge <br>
+            <strong>A:</strong> The person is most likely to interact with the hob next because they have just finished cleaning the sink and are now moving towards the hob, which suggests they might need to use it for cooking or cleaning purposes.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/action_planning.jpg" alt="Action planning example" style="display: block; margin: 0 auto; width: 100%; height: auto; max-height: 400px; object-fit: contain;"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>Action Planning:</strong> <br>
+            <strong>Q:</strong> We are performing a cooking/assembly task with the following sequence of actions: put down tray, put down sponge, take glass, wash knife.. Based on the video, what should I do next, and how can I get to the place where the next step takes place? <br>
+            <strong>A:</strong> You have already completed the actions of putting down the tray and the sponge. Now, you are about to take the glass and wash the knife. To do this, move right to the sink and start washing the knife.
+          </h2>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
 <!-- End image carousel -->
 
-
-
-
-<!-- Youtube video -->
+<!-- Data Generation Pipeline -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <h2 class="title is-3 has-text-centered">Data Generation Pipeline</h2>
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="box has-background-white">
+            <div class="image-slider" id="pipeline-slider">
+              <div class="slider-scroll" id="slider-scroll">
+                <img src="static/images/pcd_reg-crop.jpg" alt="Data generation pipeline" class="slider-image"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+
+<style>
+.image-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: grab;
+}
+
+.slider-scroll {
+  min-width: max-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider-image {
+  height: 100%;
+  width: auto;
+  user-select: none;
+  pointer-events: none;
+  margin-right: 0;
+}
+</style>
+
+<script>
+const slider = document.getElementById('pipeline-slider');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.5; // 拖动速度
+  slider.scrollLeft = scrollLeft - walk;
+});
+</script>
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
+
+
+
+<!-- Image presentation instead of Youtube video -->
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
+      <h2 class="title is-3 has-text-centered">Model Architecture</h2>
+      <div style="width:100%;display:flex;justify-content:center;">
+        <img src="static/images/model.jpg" alt="Presentation Image" id="tree" style="width:100%;max-width:1200px;height:auto;">
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
@@ -294,7 +339,7 @@ a "spatio-temporal LLM" (ST-LLM), a model equipped with projectors to improve bo
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
