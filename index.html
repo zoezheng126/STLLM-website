@@ -78,7 +78,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/abs/2507.05258" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -111,7 +111,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2507.05258" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -233,6 +233,13 @@ a "spatio-temporal LLM" (ST-LLM), a model equipped with projectors to improve bo
       <div class="columns is-centered">
         <div class="column is-full">
           <div class="box has-background-white">
+            <p class="content">
+              The REA dataset is constructed via a six-step pipeline that integrates egocentric videos with 3D scene understanding.
+              For each query, we sample video clips from <em>EPIC-KITCHENS</em> and estimate the 3D positions of the person and objects
+              using action annotations and segmentation masks. We then compute spatial relationships, refine navigation paths with
+              a VideoLLM, and reconstruct a dense point cloud using hand-filtered frames. Finally, each video frame is registered
+              to the point cloud to enable precise spatial grounding.
+            </p>
             <div class="image-slider" id="pipeline-slider">
               <div class="slider-scroll" id="slider-scroll">
                 <img src="static/images/pcd_reg-crop.jpg" alt="Data generation pipeline" class="slider-image"/>
@@ -309,11 +316,19 @@ slider.addEventListener('mousemove', (e) => {
 
 
 
-<!-- Image presentation instead of Youtube video -->
+<!-- Image presentation -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Model Architecture</h2>
+
+      <p class="content">
+        The proposed Spatio-Temporal LLM (ST-LLM) integrates egocentric video, 3D point cloud, and text inputs for unified reasoning.
+        It leverages a pretrained vision encoder and a point cloud encoder to extract features, which are aligned using a cross-modal
+        Q-Former module with learnable queries. A 3D positional encoding is applied to both video and point cloud features to enhance
+        spatial precision. The fused representation is then passed to an LLM decoder to generate task-specific answers.
+      </p>
+
       <div style="width:100%;display:flex;justify-content:center;">
         <img src="static/images/model.jpg" alt="Presentation Image" id="tree" style="width:100%;max-width:1200px;height:auto;">
       </div>
@@ -322,11 +337,20 @@ slider.addEventListener('mousemove', (e) => {
 </section>
 
 
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@misc{zheng2025spatiotemporalllmreasoningenvironments,
+        title={Spatio-Temporal LLM: Reasoning about Environments and Actions}, 
+        author={Haozhen Zheng and Beitong Tian and Mingyuan Wu and Zhenggang Tang and Klara Nahrstedt and Alex Schwing},
+        year={2025},
+        eprint={2507.05258},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2507.05258}, 
+  }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
